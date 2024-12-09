@@ -22,16 +22,14 @@ public class healthSystem : MonoBehaviour
     public Sprite S_PremiumBrokenHEart;
     public Sprite S_PremiumHeart;
 
-    //private void OnCollisionEnter(Collision other)
-    //{
-    //    currentRedHearths--;
+    
 
-    //}
 
 
     private void Start()
     {
         IsHealthHalf();
+
     }
 
     private void IsHealthHalf()
@@ -109,4 +107,14 @@ public class healthSystem : MonoBehaviour
     //{
     //    IsHealthHalf();
     //}
+    private void AddHP()
+    {
+        currentRedHearths++;
+        IsHealthHalf();
+    }
+    private void RemoveHP()
+    {
+        currentRedHearths--;
+        IsHealthHalf();
+    }
 }
