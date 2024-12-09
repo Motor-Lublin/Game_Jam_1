@@ -97,16 +97,16 @@ public class healthSystem : MonoBehaviour
 
 
 
-    //public void HeartStstus()
-    //{
-    //    int redHearts = currentRedHearths;
-    //    int goldHearts = currentGoldHearths;
+    public void HeartStstus()
+    {
+        int redHearts = currentRedHearths;
+        int goldHearts = currentGoldHearths;
 
-    //}
-    //private void Update()
-    //{
-    //    IsHealthHalf();
-    //}
+    }
+    private void Update()
+    {
+        IsHealthHalf();
+    }
     private void AddHP()
     {
         currentRedHearths++;
