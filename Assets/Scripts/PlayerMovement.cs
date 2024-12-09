@@ -15,13 +15,12 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void MovableListAdd(Transform t){
-      movables.Add(t);
-      // if(t.gameObject.CompareTag("Movable")){
-      //   movables.Add(t);
-      //   Debug.Log("Object added successfuly");
-      // } else {
-      //   Debug.LogWarning("Object rejected");
-      // }
+       if(t.gameObject.CompareTag("Movable")){
+         movables.Add(t);
+         Debug.Log("Object added successfuly");
+       } else {
+         Debug.LogWarning("Object rejected");
+       }
 
     }
 
