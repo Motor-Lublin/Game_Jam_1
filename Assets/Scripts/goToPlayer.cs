@@ -6,6 +6,7 @@ public class goToPlayer : MonoBehaviour
     public GameObject playerTarget;
     Vector3 destination;
     NavMeshAgent agent;
+    [SerializeField] Transform frontLocation;
     [SerializeField] float enemySeeRange;
     // 1 TO 100%, 2 to 50% etc
     [SerializeField] float enemyAtackRange;
@@ -17,7 +18,7 @@ public class goToPlayer : MonoBehaviour
 
     void FixedUpdate()
     {
-        destination = agent.transform.position;
+        destination = frontLocation.position;
         var vectorToTarger = destination - playerTarget.transform.position;
         vectorToTarger.y = 0f;
         if (vectorToTarger.magnitude < enemySeeRange)
@@ -28,7 +29,7 @@ public class goToPlayer : MonoBehaviour
             {
                 destination = playerTarget.transform.position;
                 agent.destination = destination;
-                if (enemyAtackRange == 1 && vectorToTarger.magnitude < 1.5)
+                if (enemyAtackRange == 1 && vectorToTarger.magnitude < 1)
                 {
                     agent.destination = transform.position;
                 }
