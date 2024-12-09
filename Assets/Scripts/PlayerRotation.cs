@@ -8,6 +8,7 @@ public class PlayerRotation : MonoBehaviour
  public LayerMask groundLayer;   // Layer to detect the ground or target plane
 
     void Start(){
+
     }
 
     void Update()

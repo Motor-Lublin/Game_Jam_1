@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Movable : MonoBehaviour
 {
-  Transform transform;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+  [SerializeField] GameObject centerObject;
+
     void Start()
     {
      // TODO: Dodać request obiektu do dodania to movable 
+      Transform currTransform = transform;
+      centerObject.GetComponent<PlayerMovement>().MovableListAdd(currTransform);
+      Debug.Log("added object to MovableList");
+
         
     }
 

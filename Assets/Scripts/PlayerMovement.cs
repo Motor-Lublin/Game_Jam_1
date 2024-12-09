@@ -3,28 +3,33 @@ using System.Collections.Generic;
 public class PlayerMovement : MonoBehaviour
 {
   //Movement
-  [SerializeField] private float playerSpeed = 30f;
+  [SerializeField] private float playerSpeed = 10f;
   
-  private List<Transform> movables;
+  private List<Transform> movables = new List<Transform>();
   private float move_X;
   private float move_Y;
+    void OnAwake(){
+    }
     void Start(){
 
     }
 
-    void movableListAdd(Transform transform){
-
-      if(transform.CompareTag("Movable")){
-        movables.Add(transform);
-      }
+    public void MovableListAdd(Transform t){
+      movables.Add(t);
+      // if(t.gameObject.CompareTag("Movable")){
+      //   movables.Add(t);
+      //   Debug.Log("Object added successfuly");
+      // } else {
+      //   Debug.LogWarning("Object rejected");
+      // }
 
     }
 
-    void movableListDel(Transform transform){
+    public void MovableListDel(Transform transform){
       movables.Remove(transform);
     }
     
-    Vector2 getMovementVector(){
+    public Vector2 GetMovementVector(){
       return new Vector2(move_X, move_Y);
     }
     
@@ -34,9 +39,8 @@ public class PlayerMovement : MonoBehaviour
       move_Y = Input.GetAxis("Vertical") * playerSpeed;
       move_X *= Time.deltaTime;
       move_Y *= Time.deltaTime;
-      foreach(Transform transform in movables)
-        transform.Translate(move_X, move_Y, 0);
-        
+     foreach(Transform t in movables){ 
+        t.Translate(move_X, 0, move_Y);
     }
-
+  }
 }
