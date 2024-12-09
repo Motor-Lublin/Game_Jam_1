@@ -26,11 +26,11 @@ public class healthSystem : MonoBehaviour
 
 
 
-    private void Start()
-    {
-        IsHealthHalf();
+    //private void Start()
+    //{
+    //    IsHealthHalf();
 
-    }
+    //}
 
     private void IsHealthHalf()
     {
@@ -97,24 +97,24 @@ public class healthSystem : MonoBehaviour
 
 
 
-    public void HeartStstus()
-    {
-        int redHearts = currentRedHearths;
-        int goldHearts = currentGoldHearths;
+    //public void HeartStstus()
+    //{
+    //    int redHearts = currentRedHearths;
+    //    int goldHearts = currentGoldHearths;
 
-    }
-    private void Update()
-    {
-        IsHealthHalf();
-    }
-    private void AddHP()
-    {
-        currentRedHearths++;
-        IsHealthHalf();
-    }
-    private void RemoveHP()
-    {
-        currentRedHearths--;
-        IsHealthHalf();
-    }
+    //}
+    //private void Update()
+    //{
+    //    IsHealthHalf();
+    //}
+    //private void AddHP()
+    //{
+    //    currentRedHearths++;
+    //    IsHealthHalf();
+    //}
+    //private void RemoveHP()
+    //{
+    //    currentRedHearths--;
+    //    IsHealthHalf();
+    //}
 }
