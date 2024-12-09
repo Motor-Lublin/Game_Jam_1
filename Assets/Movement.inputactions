@@ -1,0 +1,84 @@
+{
+    "name": "Movement",
+    "maps": [
+        {
+            "name": "Movement",
+            "id": "f9b7d4e9-53d7-42e6-a3f4-c6de7fb0b011",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Value",
+                    "id": "a76a74e5-0dab-4702-bd7d-b5d7b02f5d68",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "WSAD movement",
+                    "id": "bc1ccf2b-0cf8-437b-84dd-c7420eaf2fbb",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "up",
+                    "id": "cef68f30-99bd-4f21-9948-009f900cdfe6",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "down",
+                    "id": "564ac9c0-e092-46c4-976f-a034445b6c4c",
+                    "path": "<Keyboard>/s",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "left",
+                    "id": "22bff12e-9d1d-489b-ba42-cc92d0095360",
+                    "path": "<Keyboard>/a",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "right",
+                    "id": "f0e44f9c-6b09-4b82-ba92-5dc850f584f2",
+                    "path": "<Keyboard>/d",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Main Movement",
+            "bindingGroup": "Main Movement",
+            "devices": []
+        }
+    ]
+}
