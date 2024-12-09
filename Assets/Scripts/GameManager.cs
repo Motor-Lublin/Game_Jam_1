@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    GameObject player = GameObject.FindWithTag("Player");
+
+    GameObject player; 
     
-    public static GetPlayer(){
+    
+    public GameObject GetPlayer(){
         return player;
     }
         
-    void Start()
-    {
-        
+    void Start(){
+       player = GameObject.FindWithTag("Player");
+       Debug.Log("Menager loaded!");
     }
     public static void PauseGame ()
     {
