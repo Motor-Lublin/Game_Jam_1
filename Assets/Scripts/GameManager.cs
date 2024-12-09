@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    GameObject player = GameObject.FindWithTag("Player");
+    
+    public static GetPlayer(){
+        return player;
+    }
+        
     void Start()
     {
         
