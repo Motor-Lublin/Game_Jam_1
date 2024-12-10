@@ -4,7 +4,7 @@ public class GameManager : MonoBehaviour
 {
     void Start()
     {
-        
+        AudioManager.Instance.PlayMusic(0);
     }
     public static void PauseGame ()
     {
