@@ -1222,6 +1222,10 @@ PrefabInstance:
       propertyPath: _00Object
       value: 
       objectReference: {fileID: 1656842620}
+    - target: {fileID: 5485896594679272366, guid: 98cd8d7d06a47b248bbb4ea3220a02be, type: 3}
+      propertyPath: m_Radius
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5572282495057188021, guid: 98cd8d7d06a47b248bbb4ea3220a02be, type: 3}
       propertyPath: 'hearthIcons.Array.data[0]'
       value: 

@@ -272,15 +272,9 @@
       "depth": 0,
       "source": "registry",
       "dependencies": {
-<<<<<<< Updated upstream
         "com.unity.settings-manager": "1.0.3",
         "com.unity.mathematics": "1.2.1",
         "com.unity.ugui": "1.0.0"
-=======
-        "com.unity.ugui": "1.0.0",
-        "com.unity.mathematics": "1.2.1",
-        "com.unity.settings-manager": "1.0.3"
->>>>>>> Stashed changes
       },
       "url": "https://packages.unity.com"
     },
