@@ -5,6 +5,8 @@ public class LevelUpCards : MonoBehaviour
 {
     private bool _destroyPending;
     [SerializeField] private GameObject _treasureRef;
+    //public GameObject uiElement = null;
+    
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,19 +25,25 @@ public class LevelUpCards : MonoBehaviour
 
         void Start()
         {
+            
         }
 
         void Update()
         {
         }
         void OnDestroy()
-        {
+        { 
             if (!_destroyPending)
             {
                 if (_treasureRef != null)
                     Instantiate(_treasureRef, transform.position, transform.rotation);
                 _destroyPending = true;
             }
+            //if (uiElement != null)
+            //{
+            //    uiElement.SetActive(true);
+            //}
+            
         }
     }
 }
