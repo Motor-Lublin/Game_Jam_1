@@ -19,7 +19,7 @@ public class PickItUp : MonoBehaviour
             switch (_lootType)
             {
                 case ObjectsEnums.ELoot.Heart:
-                    _playerTarget.GetComponent<healthSystem>().HealUp(2);
+                    _playerTarget.GetComponent<healthSystem>().HealUp(1);
                     break;
                 default: break;
                 

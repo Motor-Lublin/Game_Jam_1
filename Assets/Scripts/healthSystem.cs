@@ -120,4 +120,11 @@ public class healthSystem : MonoBehaviour
         currentRedHearths--;
         IsHealthHalf();
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag.Contains("Enemy"))
+        {
+            RemoveHP();
+        }
+    }
 }

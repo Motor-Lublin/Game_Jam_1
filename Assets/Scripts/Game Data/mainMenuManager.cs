@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class mainMenuManager : MonoBehaviour
@@ -10,16 +9,12 @@ public class mainMenuManager : MonoBehaviour
     [SerializeField] GameObject canvas;
     [SerializeField] GameObject mainMenu;
     [SerializeField] GameObject level1;
-    [SerializeField] Slider volumeSlider;
-    bool isMusicPaused = false;
-
 
     bool settingsOpen;
 
     public void Start()
     {
         settings.Enable();
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -68,6 +63,7 @@ public class mainMenuManager : MonoBehaviour
         SaveManager.GetComponent<playerDataManager>().SaveGame();
         mainMenu.SetActive(true);
         level1.SetActive(false);
+        canvas.SetActive(false);
     }
 
     public void muteMusic()
