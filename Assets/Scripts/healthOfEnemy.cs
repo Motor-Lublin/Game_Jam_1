@@ -17,4 +17,12 @@ public class healthOfEnemy : MonoBehaviour
         distanceParameter();
         enemyHealthNumber = enemyHealthNumber - player.GetComponent<playerDamage>().damage / distanceDamageLose;
     }
+
+    private void Update()
+    {
+        if (enemyHealthNumber >= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 }

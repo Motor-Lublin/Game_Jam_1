@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class healthSystem : MonoBehaviour
 {
 
@@ -15,14 +14,9 @@ public class healthSystem : MonoBehaviour
     public Sprite S_PremiumBrokenHEart;
     public Sprite S_PremiumHeart;
 
-
-
-
-
     private void Start()
     {
         IsHealthHalf();
-
     }
 
     private void IsHealthHalf()

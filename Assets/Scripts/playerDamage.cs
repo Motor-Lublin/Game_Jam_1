@@ -4,7 +4,6 @@ using UnityEngine.InputSystem;
 
 public class playerDamage : MonoBehaviour
 {
-    [SerializeField] GameObject coneOfDamage;
     [SerializeField] InputAction playerShot;
 
     [SerializeField] int maxNumberOfBullets;
@@ -40,7 +39,6 @@ public class playerDamage : MonoBehaviour
         }
         if(numberOfBullets == 0)
         {
-            Debug.Log("ITS RELOAD TIME!");
             //Reload animation
             Invoke("reload", reloadSpeed);
         }
