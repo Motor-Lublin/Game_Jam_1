@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 4657177357811667613}
   m_Layer: 0
   m_Name: P_Chest
-  m_TagString: Movable/Enemy
+  m_TagString: Movable/Items
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   enemyHealthNumber: 1
+  _healthBar: {fileID: 0}
+  _reduceSpeed: 2
   distanceDamageLose: 1
 --- !u!135 &4657177357811667613
 SphereCollider:
