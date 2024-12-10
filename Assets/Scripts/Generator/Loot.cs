@@ -36,9 +36,8 @@ public class Loot : SpawnableObject
 
     void Start()
     {
-        GetComponent<MeshRenderer>().material.color = Color.yellow;
+        GetComponentInChildren<MeshRenderer>().material.color = Color.yellow;
         InitiateLoot();
-
 
     }
 
