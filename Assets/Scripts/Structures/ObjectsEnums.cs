@@ -33,4 +33,12 @@ public class ObjectsEnums : MonoBehaviour
         Rock
     }
 
+    public enum ELevelUpType
+    {
+        None,
+        HealthUp,
+        SpeedUp,
+        DamageUp
+    }
+
 }
