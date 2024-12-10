@@ -16,13 +16,14 @@ public class healthSystem : MonoBehaviour
     public Sprite S_PremiumBrokenHEart;
     public Sprite S_PremiumHeart;
 
+    public Animator animator;
+
 
     [SerializeField] Light playerLight;
     private void Start()
     {
         IsHealthHalf();
         maxRedHearths = 8;
-
     }
 
     private void IsHealthHalf()
@@ -100,7 +101,7 @@ public class healthSystem : MonoBehaviour
     {
         currentRedHearths += amountToHeal;
         if (currentRedHearths > maxRedHearths) currentRedHearths = maxRedHearths;
-    }
+    }   
 
 
     public void HeartStstus()
@@ -114,8 +115,13 @@ public class healthSystem : MonoBehaviour
         IsHealthHalf();
         if(currentRedHearths <= 0)
         {
-            currentRedHearths = 7;
+            animator.SetTrigger("Death");
         }
+    }
+
+    public void RunGameOver()
+    {
+        GameManager.Instance.GameOver();
     }
     public void AddHP()
     {

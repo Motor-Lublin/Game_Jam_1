@@ -29,6 +29,7 @@ public class healthOfEnemy : MonoBehaviour
         _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
         if (enemyHealthNumber <= 0)
         {
+            GameManager.Instance.HowMuchWeKilled += 1;
             Destroy(gameObject);
         }
     }

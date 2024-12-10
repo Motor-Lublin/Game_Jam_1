@@ -392,6 +392,7 @@ GameObject:
   - component: {fileID: 5541803909434532203}
   - component: {fileID: 9081446106593972412}
   - component: {fileID: 4687704133983379297}
+  - component: {fileID: 3408694415498337471}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Movable/Enemy
@@ -573,6 +574,18 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &3408694415498337471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2930123010518056536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f3d05b4d7826774390a17b45ffb9881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3066939504397354376
 GameObject:
   m_ObjectHideFlags: 0
