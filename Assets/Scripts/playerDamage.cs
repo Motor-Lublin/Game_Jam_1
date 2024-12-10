@@ -6,11 +6,11 @@ public class playerDamage : MonoBehaviour
 {
     [SerializeField] InputAction playerShot;
 
-    [SerializeField] int maxNumberOfBullets;
+    public int maxNumberOfBullets;
     int numberOfBullets;
 
 
-    [SerializeField] float reloadSpeed;
+    public float reloadSpeed;
     bool canShootAgain = true;
 
     public float damage;

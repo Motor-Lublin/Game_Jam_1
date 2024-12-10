@@ -9,6 +9,9 @@ TagManager:
   - Movable/Items
   - Movable/Enemy/InRange
   - Movable
+  - level1
+  - musicVolume
+  - musicToggle
   layers:
   - Default
   - TransparentFX

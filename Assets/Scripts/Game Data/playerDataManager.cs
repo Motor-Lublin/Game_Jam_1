@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class playerDataManager : MonoBehaviour
 {
+    [SerializeField] GameObject player;
     //gun
     public int maxNumberOfBullets;
     public int numberOfBullets;
@@ -16,31 +17,61 @@ public class playerDataManager : MonoBehaviour
     //health
     public int currentRedHearths;
     public int maxRedHearths;
-
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
+        GameData gameData = new GameData();
+        string json = JsonUtility.ToJson(gameData);
+        string path = Application.persistentDataPath + "/playerDefaultData.json";
+        File.WriteAllText(path, json);
     }
     public void SaveGame()
     {
         GameData gameData = new GameData();
-        GameObject playerDamage = GameObject.FindWithTag("Player");
-        gameData.damage = playerDamage.GetComponent<playerDamage>().damage;
-
+        pushData(gameData);
         string json = JsonUtility.ToJson(gameData);
         string path = Application.persistentDataPath + "/playerData.json";
-        System.IO.File.WriteAllText(path, json);
+        File.WriteAllText(path, json);
     }
     public void LoadGame()
     {
-        SceneManager.LoadScene(1);
         string path = Application.persistentDataPath + "/playerData.json";
         if (File.Exists(path))
         {
-            string json = System.IO.File.ReadAllText(path);
+            string json = File.ReadAllText(path);
             GameData loadedData = JsonUtility.FromJson<GameData>(json);
-
-            GameObject.FindWithTag("Player").GetComponent<playerDamage>().damage = loadedData.damage;
+            loadData(loadedData);
+        } else
+        {
+            NewGame();
         }
+    }
+
+    public void NewGame()
+    {
+        string path = Application.persistentDataPath + "/playerDefaultData.json";
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            GameData loadedData = JsonUtility.FromJson<GameData>(json);
+            loadData(loadedData);
+        }
+    }
+    void loadData(GameData loadedData)
+    {
+        player.GetComponent<playerDamage>().damage = loadedData.damage;
+        player.GetComponent<playerDamage>().maxNumberOfBullets = loadedData.maxNumberOfBullets;
+        player.GetComponent<playerDamage>().reloadSpeed = loadedData.reloadSpeed;
+        player.GetComponent<playerDamage>().bulletPenetration = loadedData.bulletPenetration;
+        player.GetComponent<healthSystem>().currentRedHearths = loadedData.currentRedHearths;
+        player.GetComponent<healthSystem>().maxRedHearths = loadedData.maxRedHearths;
+    }
+    void pushData(GameData loadedData)
+    {
+        loadedData.damage = player.GetComponent<playerDamage>().damage;
+        loadedData.maxNumberOfBullets = player.GetComponent<playerDamage>().maxNumberOfBullets;
+        loadedData.reloadSpeed = player.GetComponent<playerDamage>().reloadSpeed;
+        loadedData.bulletPenetration = player.GetComponent<playerDamage>().bulletPenetration;
+        loadedData.currentRedHearths = player.GetComponent<healthSystem>().currentRedHearths;
+        loadedData.maxRedHearths = player.GetComponent<healthSystem>().maxRedHearths;
     }
 }
