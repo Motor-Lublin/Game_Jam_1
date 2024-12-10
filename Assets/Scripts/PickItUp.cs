@@ -33,7 +33,7 @@ public class PickItUp : MonoBehaviour
 
     void OnDestroy()
     {
-        if (!_destroyPending&& _lootType != ObjectsEnums.ELoot.Chest)
+        if (!_destroyPending&& _lootType == ObjectsEnums.ELoot.Chest)
         {
             if (_treasureRef != null)
                 Instantiate(_treasureRef, transform.position, transform.rotation);
