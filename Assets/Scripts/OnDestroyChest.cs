@@ -6,9 +6,9 @@ public class OnDestroyChest : MonoBehaviour
 {
     private void OnDestroy()
     {
-        print("DESTROY CHEST!");
-        GameManager.Instance.UIForUpgradeOfStats.SetActive(true);
-        GameManager.Instance.PauseGame();
+        //print("DESTROY CHEST!");
+        //GameManager.Instance.UIForUpgradeOfStats.SetActive(true);
+        //GameManager.Instance.PauseGame();
     }
 
 }

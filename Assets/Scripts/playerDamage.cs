@@ -37,7 +37,11 @@ public class playerDamage : MonoBehaviour
             AudioManager.Instance.PlaySFX(0);
             inRange = GameObject.FindGameObjectsWithTag("Movable/Enemy/InRange");
             var chestInRange = GameObject.FindGameObjectWithTag("Movable/Chest/InRange");
-            Destroy(chestInRange);
+            if (chestInRange){
+                GameManager.Instance.UIForUpgradeOfStats.SetActive(true);
+                GameManager.Instance.PauseGame();
+                Destroy(chestInRange);
+            }
             foreach (GameObject canBeKilled in inRange)
             {
                 canBeKilled.GetComponent<healthOfEnemy>().enemyLoseHP();
