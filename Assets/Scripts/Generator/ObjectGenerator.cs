@@ -20,6 +20,7 @@ public class Generator : MonoBehaviour
     [SerializeField] private GameObject _00Object;
     [SerializeField] private GameObject _playerRef;
     [SerializeField] private GameObject _ObjectToSpawnPrefRef;
+    [SerializeField] private GameObject _Enemy1Ref;
 
     void Start()
     {
@@ -125,7 +126,7 @@ public class Generator : MonoBehaviour
         Vector3 spawnTransform = CalcSpawnTransform();
         GameObject newObjectSpawned = Instantiate
         (
-            _ObjectToSpawnPrefRef,
+            _Enemy1Ref,
             spawnTransform,
             new Quaternion()
         );

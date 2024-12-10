@@ -69,7 +69,7 @@ public class PlayerMovement : MonoBehaviour
         foreach (Transform t in movables)
         {
             if(t != null)
-                t.Translate(move_X, 0, move_Y);
+                t.Translate(move_X, 0, move_Y, Space.World);
         }
     }
     void OnTriggerEnter(Collider collider)
