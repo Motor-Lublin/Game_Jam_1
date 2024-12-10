@@ -5,27 +5,40 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using static UnityEditor.PlayerSettings;
+using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
 using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 public class Generator : MonoBehaviour
 {
-    private ObjectDB _objectDb = new ObjectDB();
+    private ObjectDB _objectDb;
     private List<GameObject> _spawnedObjects;//might be useless
-    private float _enemySpawnMultiplier = 1f;
+    private float _enemySpawnMultiplier;
     private bool _canSpawnBoss = false;
-    private float _spawnDistance = 300f;
-    private float _spawnTreshold = 200f;
-    private float _travledDistance = 0f;
+    private float _spawnDistance;
+    private float _spawnTreshold;
+    public float _travledDistance;
+    private PlayerMovement _playerMovement;
+
+    private Vector3 _previousPlayerPosition;
     //player movement component;
+    [SerializeField] private GameObject _00Object;
     [SerializeField] private GameObject _playerRef;
     [SerializeField] private GameObject _ObjectToSpawnPrefRef;
+    [SerializeField] private GameObject _spawnPoint;
+    public float spawnDistance;
 
 
     void Start()
     {
-        //player movement component = _playerRef.getComponent<MovementComponent>
+        _playerMovement = _playerRef.GetComponent<PlayerMovement>();
+        _objectDb = new ObjectDB();
+        _spawnDistance = 10f;
+        _spawnTreshold = 50f;
+        _canSpawnBoss = false;
+        _enemySpawnMultiplier = 1f;
+        _previousPlayerPosition = _00Object.transform.position;
     }
     void Update()
     {
@@ -33,12 +46,23 @@ public class Generator : MonoBehaviour
         {
             _travledDistance = 0f;
             SpawnEntity();
-
         }
+        else
+        {
+            _travledDistance +=
+                Mathf.Abs
+                    ((_previousPlayerPosition.x - _00Object.transform.position.x)) +
+                Mathf.Abs
+                (
+                    (_previousPlayerPosition.z - _00Object.transform.position.z));
+            _previousPlayerPosition = _00Object.transform.position;
+        }
+
+        //CalcSpawnTransform();
     }
 
     private void SpawnEntity()
-    {
+   {
         switch (Random.Range(1, 1000))
         {
             case <= 199:
@@ -107,39 +131,45 @@ public class Generator : MonoBehaviour
 
     private void SpawnRolled(Enemy enemy)
     {
-        Transform spawnTransform = CalcSpawnTransform();
-        GameObject newObjectSpawned = Instantiate(_ObjectToSpawnPrefRef, spawnTransform);
+        Vector3 spawnTransform = CalcSpawnTransform();
+        GameObject newObjectSpawned = Instantiate
+        (
+            _ObjectToSpawnPrefRef,
+            spawnTransform,
+            new Quaternion()
+        );
         newObjectSpawned.AddComponent<Enemy>();
     }
 
 
     private void SpawnRolled(Environment loot)
     {
-        Transform spawnTransform = CalcSpawnTransform();
-        GameObject newObjectSpawned = Instantiate(_ObjectToSpawnPrefRef, spawnTransform);
+        Vector3 spawnTransform = CalcSpawnTransform();
+        GameObject newObjectSpawned = Instantiate
+        (
+            _ObjectToSpawnPrefRef,
+            spawnTransform,
+            new Quaternion()
+        );
         newObjectSpawned.AddComponent<Environment>();
     }
 
     private void SpawnRolled(Loot loot)
     {
-        Transform spawnTransform = CalcSpawnTransform();
-        GameObject newObjectSpawned = Instantiate(_ObjectToSpawnPrefRef, spawnTransform);
+        Vector3 spawnTransform = CalcSpawnTransform();
+        GameObject newObjectSpawned = Instantiate
+            (
+                _ObjectToSpawnPrefRef, 
+                spawnTransform, 
+                new Quaternion()
+                );
         newObjectSpawned.AddComponent<Loot>();
     }
 
-    private Transform CalcSpawnTransform()
+    private Vector3 CalcSpawnTransform()
     {
-        Vector2 movementDirection = Vector2.zero;//_movementComponentRef.GetMovementDirection()
-        Vector3 playerPosition = _playerRef.transform.position;
-        while (movementDirection.Equals(Vector2.zero))
-            movementDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        float angle = math.atan2(movementDirection.x, movementDirection.y) * 180 / Mathf.PI;
-        float x = playerPosition.x + (_spawnDistance * Mathf.Cos(angle / (180f / Mathf.PI)));
-        float y = playerPosition.y;
-        float z = playerPosition.z + (_spawnDistance * Mathf.Sin(angle / (180f / Mathf.PI)));
-        Transform spawnTransform = _playerRef.transform;
-        spawnTransform.position = new Vector3(x, y, z);
-        return spawnTransform;
+        Vector3 movementDirection = _playerMovement.GetMovementVector().normalized;
+        return transform.position + movementDirection * _spawnDistance;
     }
 
     public void AddBossToSpawnPool(bool addOrNot)

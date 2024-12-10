@@ -25,7 +25,10 @@ public class SpawnableObject : MonoBehaviour
 
     void Start()
     {
-        
+        Movable movableRef = GetComponent<Movable>();
+        movableRef.SetCenterObject(GameObject.FindWithTag("Player"));
+        movableRef.AddToMovableList();
+
     }
 
     // Update is called once per frame
@@ -33,4 +36,5 @@ public class SpawnableObject : MonoBehaviour
     {
         
     }
+    //on destroy remove from movable list
 }

@@ -16,17 +16,17 @@ public class Loot : SpawnableObject
         {
             case ObjectsEnums.ELoot.Heart:
                 _spawnChance = _heartSpawnChance;
-                _lootMesh = new Mesh();//insert mesh ref
+                //_lootMesh = new Mesh();//insert mesh ref
                 _lootMaterial = null;
                 break;
             case ObjectsEnums.ELoot.Chest:
                 _spawnChance = _chestSpawnChance;
-                _lootMesh = new Mesh();//insert mesh ref
+                //_lootMesh = new Mesh();//insert mesh ref
                 _lootMaterial = null;
                 break;
             case ObjectsEnums.ELoot.Gun:
                 _spawnChance = _gunSpawnChance;
-                _lootMesh = new Mesh();//insert mesh ref
+                //_lootMesh = new Mesh();//insert mesh ref
                 _lootMaterial = null;
                 break;
             default:
