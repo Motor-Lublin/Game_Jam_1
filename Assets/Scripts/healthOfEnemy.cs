@@ -26,7 +26,7 @@ public class healthOfEnemy : MonoBehaviour
             player.GetComponent<Generator>().killedMobs += 1;
             Destroy(gameObject);
         }
-        if (player.GetComponent<Generator>().killedMobs > 20)
+        if (player.GetComponent<Generator>().killedMobs > 5)
         {
             player.GetComponent<Generator>()._canSpawnBoss = true;
         }

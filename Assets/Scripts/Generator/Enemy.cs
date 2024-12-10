@@ -9,10 +9,10 @@ public class Enemy : SpawnableObject
     public float _spawnChance;
     private bool _isBoss = false;
     private float _timer;
-    private float _weakSpawnChance = 0.7f;
+    private float _weakSpawnChance = 0.47f;
     private float _mediumSpawnChance = 0.4f;
     private float _hardSpawnChance = 0.15f;
-    private float _bossSpawnChance = 0.03f;
+    private float _bossSpawnChance = 0.3f;
     private string _pathToChariotController = "Assets/Models/Chariot";
 
     public Enemy(ObjectsEnums.EEnemy enemyType) : base(ObjectsEnums.EObjectTypes.Enemy)
