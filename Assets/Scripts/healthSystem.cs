@@ -4,6 +4,7 @@ public class healthSystem : MonoBehaviour
 {
 
     public SpriteRenderer[] hearthIcons;
+    [SerializeField] private GameManager _gameManager;
     public int currentRedHearths;
     public int currentGoldHearths;
     public int maxRedHearths;
@@ -92,7 +93,7 @@ public class healthSystem : MonoBehaviour
                 hearthIcons[3].sprite = S_NormalHeart;
                 playerLight.colorTemperature = 20000;
                 return;
-        }
+}
     }
 
     public void HealUp(int amountToHeal)
@@ -112,8 +113,9 @@ public class healthSystem : MonoBehaviour
     {
         IsHealthHalf();
         if(currentRedHearths <= 0)
+            _gameManager.GameOver();
         {
-            currentRedHearths = 7;
+
         }
     }
     public void AddHP()
