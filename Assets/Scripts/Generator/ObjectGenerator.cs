@@ -9,12 +9,14 @@ public class Generator : MonoBehaviour
     //FRANEK
     public static Generator Instance;
     //FRANEK
+
+    public int killedMobs = 0;
     
 
     private ObjectDB _objectDb;
     private List<GameObject> _spawnedObjects;//might be useless
     private float _enemySpawnMultiplier;
-    private bool _canSpawnBoss = false;
+    public bool _canSpawnBoss = false;
     private float _spawnDistance;
     private float _spawnTreshold;
     public float _travledDistance;

@@ -15,7 +15,7 @@ public class healthOfEnemy : MonoBehaviour
     {
         float distance = Vector3.Distance(transform.position, player.transform.position);
         float pen = player.GetComponent<playerDamage>().bulletPenetration;
-        distanceDamageLose = ((distance / 10)+10) / pen;
+        distanceDamageLose = ((distance / 10) + 10) / pen;
     }
     public void enemyLoseHP()
     {
@@ -23,7 +23,12 @@ public class healthOfEnemy : MonoBehaviour
         enemyHealthNumber = enemyHealthNumber - player.GetComponent<playerDamage>().damage / distanceDamageLose;
         if (enemyHealthNumber <= 0)
         {
+            player.GetComponent<Generator>().killedMobs += 1;
             Destroy(gameObject);
+        }
+        if (player.GetComponent<Generator>().killedMobs > 20)
+        {
+            player.GetComponent<Generator>()._canSpawnBoss = true;
         }
     }
 }
