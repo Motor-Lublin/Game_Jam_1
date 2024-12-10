@@ -229,6 +229,8 @@ GameObject:
   - component: {fileID: 252216291}
   - component: {fileID: 252216292}
   - component: {fileID: 252216293}
+  - component: {fileID: 252216294}
+  - component: {fileID: 252216295}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -251,7 +253,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -292,6 +294,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  rotationUpdateInterveal: 0.09
+  closeProximityRadius: 5
+  neutralFacingAngle: 90
 --- !u!114 &252216288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,6 +413,54 @@ MonoBehaviour:
   _00Object: {fileID: 1656842620}
   _playerRef: {fileID: 252216281}
   _ObjectToSpawnPrefRef: {fileID: 2017316622117933532, guid: 5522908240cf88048bb11c39cfc2756c, type: 3}
+--- !u!135 &252216294
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252216281}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 50
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &252216295
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 252216281}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0
 --- !u!212 &314586709 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5037469585714625136, guid: 405727804fc2bee42b31335f19120d16, type: 3}
@@ -1090,6 +1143,10 @@ PrefabInstance:
       objectReference: {fileID: 1620275229}
     - target: {fileID: 689493114370413780, guid: 405727804fc2bee42b31335f19120d16, type: 3}
       propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 689493114370413780, guid: 405727804fc2bee42b31335f19120d16, type: 3}
+      propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5904985182747530035, guid: 405727804fc2bee42b31335f19120d16, type: 3}
