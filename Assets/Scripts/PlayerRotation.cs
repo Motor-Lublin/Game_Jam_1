@@ -45,12 +45,12 @@ public class PlayerRotation : MonoBehaviour
 
 
 
-            if (distance < closeProximityRadius)
-            {
-                Quaternion neutralRotation = Quaternion.Euler(0, neutralFacingAngle, 0);
-                transform.rotation = Quaternion.Slerp(transform.rotation, neutralRotation, rotationSpeed * Time.deltaTime);
-                return;
-            }
+            // if (distance < closeProximityRadius)
+            // {
+            //     Quaternion neutralRotation = Quaternion.Euler(0, neutralFacingAngle, 0);
+            //     transform.rotation = Quaternion.Slerp(transform.rotation, neutralRotation, rotationSpeed * Time.deltaTime);
+            //     return;
+            // }
 
             Vector3 direction = (targetPosition - transform.position).normalized;
 
