@@ -34,7 +34,7 @@ public class Enemy : SpawnableObject
     }
     void Start()
     {
-        
+        GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
     // Update is called once per frame

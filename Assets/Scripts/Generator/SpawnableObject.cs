@@ -1,12 +1,16 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnableObject : MonoBehaviour
 {
     public ObjectsEnums.EObjectTypes _objectType;
     public float _typeSpawnChance;
+    private Movable _movableRef;
+    private float _despawnTreshold;
 
     public SpawnableObject(ObjectsEnums.EObjectTypes objectType)
     {
+        _despawnTreshold = 50f;
         _objectType = objectType;
         switch (objectType)
         {
@@ -21,20 +25,33 @@ public class SpawnableObject : MonoBehaviour
                 break;
             default: break;
         }
+
     }
 
     void Start()
     {
-        Movable movableRef = GetComponent<Movable>();
-        movableRef.SetCenterObject(GameObject.FindWithTag("Player"));
-        movableRef.AddToMovableList();
+        _movableRef = GetComponent<Movable>();
+        _movableRef.SetCenterObject(GameObject.FindWithTag("Player"));
+        _movableRef.AddToMovableList();
 
     }
 
-    // Update is called once per frame
+    void OnTriggerExit(Collider other)
+    {
+        if (gameObject.IsDestroyed()) return;
+        if (other.GetType() != typeof(SphereCollider)) return;
+        if (_movableRef!=null)
+            _movableRef.RemoveFromMovableList(transform);
+        Destroy(gameObject);
+    }
     void Update()
     {
         
+    }
+
+    void OnDestroy()
+    {
+
     }
     //on destroy remove from movable list
 }
