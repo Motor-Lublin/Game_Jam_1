@@ -9,8 +9,11 @@ public class PickItUp : MonoBehaviour
     private bool _destroyPending;
 
 
-    void Start()
+    void Awake()
     {
+        //FRANEK
+        _playerTarget = GameObject.FindGameObjectWithTag("Player");
+        //FRANEK
         if (_lootType == null) _lootType = ObjectsEnums.ELoot.Heart;
     }
     void OnTriggerEnter(Collider other)
