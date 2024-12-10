@@ -30,7 +30,6 @@ public class playerDamage : MonoBehaviour
         if (playerShot.WasPressedThisFrame() && numberOfBullets != 0 && canShootAgain)
         {
             canShootAgain = false;
-            AudioManager.Instance.PlaySFX(0);
             Invoke("waitToShoot", 1);
             //PLay particles AND Animation
             inRange = GameObject.FindGameObjectsWithTag("Movable/Enemy/InRange");
@@ -56,5 +55,8 @@ public class playerDamage : MonoBehaviour
     {
         numberOfBullets = maxNumberOfBullets;
     }
-    
+    private void AddDmg()
+    {
+        damage++;
+    }
 }

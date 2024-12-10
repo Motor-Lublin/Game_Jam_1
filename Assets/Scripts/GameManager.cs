@@ -2,11 +2,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager Instance;
     void Start()
     {
-        AudioManager.Instance.PlayMusic(0);
+        Instance = this;
     }
-    public static void PauseGame ()
+
+    public void PauseGame ()
     {
         if(Time.timeScale == 1){
                 Time.timeScale = 0;
@@ -19,9 +21,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // TESTOWE
-        if (Input.GetKeyDown(KeyCode.Escape)){
-            PauseGame();
-        }
-        
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    PauseGame();
+        //}
+
     }
 }
