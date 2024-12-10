@@ -18,10 +18,10 @@ public class SpawnableObject : MonoBehaviour
                 _typeSpawnChance = 0.1f;
                 break;
             case ObjectsEnums.EObjectTypes.Environment:
-                _typeSpawnChance = 0.7f;
+                _typeSpawnChance = 0.2f;
                 break;
             case ObjectsEnums.EObjectTypes.Enemy:
-                _typeSpawnChance = 0.2f;
+                _typeSpawnChance = 0.8f;
                 break;
             default: break;
         }
