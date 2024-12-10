@@ -2,14 +2,12 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    void Start()
-    {
-        AudioManager.Instance.PlayMusic(0);
-    }
-    public static void PauseGame ()
+    [SerializeField] GameObject main;
+    public void PauseGame ()
     {
         if(Time.timeScale == 1){
                 Time.timeScale = 0;
+                
         } else {
                 Time.timeScale = 1;
         }
@@ -18,10 +16,10 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
-        // TESTOWE
-        if (Input.GetKeyDown(KeyCode.Escape)){
+
+        if (Input.GetKeyDown(KeyCode.Escape) && main.GetComponent<mainMenuMgr>().levelOpen)
+        {
             PauseGame();
         }
-        
-    }
+    }   
 }

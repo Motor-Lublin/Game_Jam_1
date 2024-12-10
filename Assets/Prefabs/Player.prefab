@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b0251ce3063784e8b233b181ba76c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coneOfDamage: {fileID: 0}
+  coneOfDamage: {fileID: 4679157849380323119}
   playerShot:
     m_Name: Player Shot
     m_Type: 0
