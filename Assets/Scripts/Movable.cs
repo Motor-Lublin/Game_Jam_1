@@ -13,10 +13,18 @@ public class Movable : MonoBehaviour
 
         
     }
+    public void AddToMovableList() {
+        centerObject.GetComponent<PlayerMovement>().MovableListAdd(transform);
+    }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public void SetCenterObject(GameObject newObject)
+    {
+        centerObject = newObject;
     }
 }

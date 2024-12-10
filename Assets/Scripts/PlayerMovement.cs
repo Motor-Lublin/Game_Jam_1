@@ -28,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
       movables.Remove(transform);
     }
     
-    public Vector2 GetMovementVector(){
-      return new Vector2(move_X, move_Y);
+    public Vector3 GetMovementVector(){
+        return new Vector3(-move_X, 0, -move_Y);
     }
     
     // Update is called once per frame
