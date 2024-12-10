@@ -10,7 +10,7 @@ public class SpawnableObject : MonoBehaviour
 
     public SpawnableObject(ObjectsEnums.EObjectTypes objectType)
     {
-        _despawnTreshold = 50f;
+        _despawnTreshold = 20f;
         _objectType = objectType;
         switch (objectType)
         {
