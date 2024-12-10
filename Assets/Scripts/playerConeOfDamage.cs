@@ -4,7 +4,7 @@ public class enemyInRange : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag.Contains("Enemy"))
+        if (other.gameObject.tag.Contains("Enemy") || other.gameObject.tag.Contains("Destroyable"))
         {
             other.gameObject.tag = $"{other.gameObject.tag}/InRange";
         }

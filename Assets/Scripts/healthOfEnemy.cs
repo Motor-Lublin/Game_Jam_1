@@ -12,8 +12,11 @@ public class healthOfEnemy : MonoBehaviour
 
     private void Start()
     {
-        maxHealth = enemyHealthNumber;
-        _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
+        if (gameObject.tag.Contains("Enemy"))
+        {
+            maxHealth = enemyHealthNumber;
+            _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
+        }
         player = GameObject.FindGameObjectWithTag("Player");
     }
     void distanceParameter()
@@ -25,8 +28,14 @@ public class healthOfEnemy : MonoBehaviour
     public void enemyLoseHP()
     {
         distanceParameter();
-        enemyHealthNumber = enemyHealthNumber - player.GetComponent<playerDamage>().damage / distanceDamageLose;
-        _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
+        if (gameObject.tag.Contains("Enemy"))
+        {
+            enemyHealthNumber = enemyHealthNumber - player.GetComponent<playerDamage>().damage / distanceDamageLose;
+            _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
+        } else if (gameObject.tag.Contains("Destroyable"))
+        {
+            Destroy(gameObject);
+        }
         if (enemyHealthNumber <= 0)
         {
             Destroy(gameObject);

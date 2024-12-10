@@ -18,6 +18,7 @@ public class playerDamage : MonoBehaviour
     public float bulletPenetration;
 
     GameObject[] inRange;
+    GameObject[] inRangeDestroyable;
 
     private void Start()
     {
@@ -34,6 +35,11 @@ public class playerDamage : MonoBehaviour
             //PLay particles AND Animation
             inRange = GameObject.FindGameObjectsWithTag("Movable/Enemy/InRange");
             foreach (GameObject canBeKilled in inRange)
+            {
+                canBeKilled.GetComponent<healthOfEnemy>().enemyLoseHP();
+            }
+            inRangeDestroyable = GameObject.FindGameObjectsWithTag("Movable/Items/Destroyable/InRange");
+            foreach (GameObject canBeKilled in inRangeDestroyable)
             {
                 canBeKilled.GetComponent<healthOfEnemy>().enemyLoseHP();
             }
