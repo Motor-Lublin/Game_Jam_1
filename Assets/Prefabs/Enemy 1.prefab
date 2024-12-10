@@ -133,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
   frontLocation: {fileID: 5198246543190906007}
-  enemySeeRange: 20
+  enemySeeRange: 30
   enemyAtackRange: 1
 --- !u!114 &9081446106593972412
 MonoBehaviour:
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyHealthNumber: 10
+  enemyHealthNumber: 20
   _healthBar: {fileID: 4517109209478374870}
   _reduceSpeed: 2
   distanceDamageLose: 1

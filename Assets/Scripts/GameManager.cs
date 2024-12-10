@@ -2,12 +2,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] GameObject main;
+    public static GameManager Instance;
+    void Start()
+    {
+        Instance = this;
+    }
+
     public void PauseGame ()
     {
         if(Time.timeScale == 1){
                 Time.timeScale = 0;
-                
         } else {
                 Time.timeScale = 1;
         }
@@ -16,10 +20,11 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        // TESTOWE
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    PauseGame();
+        //}
 
-        if (Input.GetKeyDown(KeyCode.Escape) && main.GetComponent<mainMenuMgr>().levelOpen)
-        {
-            PauseGame();
-        }
-    }   
+    }
 }

@@ -17,6 +17,7 @@ public class Generator : MonoBehaviour
     private bool _canSpawnBoss = false;
     private float _spawnDistance;
     private float _spawnTreshold;
+    private float _spawnVariation;
     public float _travledDistance;
     private PlayerMovement _playerMovement;
 
@@ -41,11 +42,12 @@ public class Generator : MonoBehaviour
         //FRANEK
         _playerMovement = _playerRef.GetComponent<PlayerMovement>();
         _objectDb = new ObjectDB();
-        _spawnDistance = 25f;
-        _spawnTreshold = 50f;
+        _spawnDistance = 30f;
+        _spawnTreshold = 40f;//enemies spawn around 0.85 and 1.2 units traveled of this value
         _canSpawnBoss = false;
         _enemySpawnMultiplier = 1f;
         _previousPlayerPosition = _00Object.transform.position;
+        _spawnVariation = 15f;
     }
     void Update()
     {
@@ -223,7 +225,14 @@ public class Generator : MonoBehaviour
     private Vector3 CalcSpawnTransform()
     {
         Vector3 movementDirection = _playerMovement.GetMovementVector().normalized;
-        return transform.position + movementDirection * _spawnDistance;
+        return 
+            transform.position + 
+            movementDirection * _spawnDistance + 
+            _spawnVariation * new Vector3(
+                Random.Range(-1f,1f),
+                0,
+                Random.Range(-1f,1f)
+                );
     }
 
     public void AddBossToSpawnPool(bool addOrNot)

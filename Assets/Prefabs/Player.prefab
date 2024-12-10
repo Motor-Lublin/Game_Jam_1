@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1862904643528736438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8625858966355589848}
+  m_Layer: 0
+  m_Name: ShotgunParticleHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8625858966355589848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862904643528736438}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0, y: -9.47, z: 6.8000016}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 334942800669770865}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2230173266585318335
 GameObject:
   m_ObjectHideFlags: 0
@@ -83,7 +114,7 @@ MonoBehaviour:
   rotationSpeed: 40
   groundLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 1
   rotationUpdateInterveal: 0.09
   closeProximityRadius: 5
   neutralFacingAngle: 90
@@ -165,6 +196,7 @@ MonoBehaviour:
       m_Action: Player Shot
       m_Flags: 0
     m_Flags: 0
+  particeShotgunHolder: {fileID: 8625858966355589848}
   maxNumberOfBullets: 10
   reloadSpeed: 2
   damage: 50
@@ -532,7 +564,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0226368b9ad3ada438fa3bb092c3843e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8625858966355589848}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0226368b9ad3ada438fa3bb092c3843e, type: 3}
 --- !u!4 &334942800669770865 stripped
