@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyHealthNumber: 100
+  enemyHealthNumber: 200
   _healthBar: {fileID: 5162600860254030834}
   _reduceSpeed: 2
   distanceDamageLose: 1
