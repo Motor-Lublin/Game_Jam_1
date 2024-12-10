@@ -19,8 +19,15 @@ public class Generator : MonoBehaviour
     //player movement component;
     [SerializeField] private GameObject _00Object;
     [SerializeField] private GameObject _playerRef;
-    [SerializeField] private GameObject _ObjectToSpawnPrefRef;
-    [SerializeField] private GameObject _Enemy1Ref;
+    [SerializeField] private GameObject _objectToSpawnPrefRef;
+    [SerializeField] private GameObject _enemy1Ref;
+    [SerializeField] private GameObject _enemy2Ref;
+    [SerializeField] private GameObject _enemy3Ref;
+    [SerializeField] private GameObject _heartRef;
+    [SerializeField] private GameObject _chestRef;
+    [SerializeField] private GameObject _gunRef;
+    [SerializeField] private GameObject _environ1Ref;
+    [SerializeField] private GameObject _bossRef;
 
     void Start()
     {
@@ -107,6 +114,7 @@ public class Generator : MonoBehaviour
                 {
                     if (enemy._spawnChance >= Random.Range(0f, 1f))
                     {
+                        if (!_canSpawnBoss && enemy._enemyType==ObjectsEnums.EEnemy.Boss1) break;
                         success = true;
                         _objectDb.enemyList.Remove(enemy);
                         _objectDb.enemyList.Add(enemy);
@@ -124,9 +132,29 @@ public class Generator : MonoBehaviour
     private void SpawnRolled(Enemy enemy)
     {
         Vector3 spawnTransform = CalcSpawnTransform();
+        GameObject toSpawn = null;
+        switch (enemy._enemyType)
+        {
+            case ObjectsEnums.EEnemy.WeakEnemy:
+                toSpawn = _enemy1Ref;
+                break;
+            case ObjectsEnums.EEnemy.MediumEnemy:
+                toSpawn = _enemy2Ref;
+                break;
+            case ObjectsEnums.EEnemy.HardEnemy:
+                toSpawn = _enemy3Ref;
+                break;
+            case ObjectsEnums.EEnemy.Boss1:
+                toSpawn = _bossRef;
+                break;
+            default:
+                toSpawn = _objectToSpawnPrefRef;
+                break;
+        }
+
         GameObject newObjectSpawned = Instantiate
         (
-            _Enemy1Ref,
+            _enemy1Ref,
             spawnTransform,
             new Quaternion()
         );
@@ -134,12 +162,22 @@ public class Generator : MonoBehaviour
     }
 
 
-    private void SpawnRolled(Environment loot)
+    private void SpawnRolled(Environment environment)
     {
         Vector3 spawnTransform = CalcSpawnTransform();
+        GameObject toSpawn = null;
+        switch (environment._environmentType)
+        {
+            case ObjectsEnums.EEnvironment.Rock:
+                toSpawn = _environ1Ref;
+                break;
+            default:
+                toSpawn = _objectToSpawnPrefRef;
+                break;
+        }
         GameObject newObjectSpawned = Instantiate
         (
-            _ObjectToSpawnPrefRef,
+            toSpawn,
             spawnTransform,
             new Quaternion()
         );
@@ -149,9 +187,25 @@ public class Generator : MonoBehaviour
     private void SpawnRolled(Loot loot)
     {
         Vector3 spawnTransform = CalcSpawnTransform();
+        GameObject toSpawn = null;
+        switch (loot._lootType)
+        {
+            case ObjectsEnums.ELoot.Heart: 
+                toSpawn = _heartRef;
+                break;
+            case ObjectsEnums.ELoot.Chest:
+                toSpawn = _chestRef;
+                break;
+            case ObjectsEnums.ELoot.Gun:
+                toSpawn = _gunRef;
+                break;
+            default: 
+                toSpawn = _objectToSpawnPrefRef;
+                break;
+        }
         GameObject newObjectSpawned = Instantiate
             (
-                _ObjectToSpawnPrefRef, 
+                toSpawn, 
                 spawnTransform, 
                 new Quaternion()
                 );

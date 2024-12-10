@@ -93,7 +93,11 @@ public class healthSystem : MonoBehaviour
         }
     }
 
-
+    public void HealUp(int amountToHeal)
+    {
+        currentRedHearths += amountToHeal;
+        if (currentRedHearths > maxRedHearths) currentRedHearths = maxRedHearths;
+    }
 
 
     public void HeartStstus()
