@@ -8,6 +8,9 @@ public class Movable : MonoBehaviour
     {
      // TODO: Dodać request obiektu do dodania to movable 
       Transform currTransform = transform;
+        //FRANEK
+        centerObject = GameObject.FindGameObjectWithTag("Player");
+        //FRANEK
       centerObject.GetComponent<PlayerMovement>().MovableListAdd(currTransform);
       Debug.Log("added object to MovableList");
 

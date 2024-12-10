@@ -255,10 +255,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 3.6203454
+  m_Radius: 1.4475964
+  m_Height: 3.620345
   m_Direction: 1
-  m_Center: {x: 0, y: 1.8101727, z: 0}
+  m_Center: {x: 0, y: 1.8101726, z: -0.05288422}
 --- !u!4 &252216286
 Transform:
   m_ObjectHideFlags: 0
@@ -292,6 +292,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  rotationUpdateInterveal: 0.09
+  closeProximityRadius: 5
+  neutralFacingAngle: 90
 --- !u!114 &252216288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -360,12 +363,20 @@ MonoBehaviour:
     m_Id: d7554ac0-2831-4be2-a270-9a55303181fe
     m_Processors: 
     m_Interactions: 
-    m_SingletonActionBindings: []
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 6a31f338-0c70-4356-85d1-8f71f5a0ded6
+      m_Path: <Mouse>/leftButton
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Shot
+      m_Flags: 0
     m_Flags: 0
   maxNumberOfBullets: 10
   reloadSpeed: 2
-  damage: 100
-  bulletPenetration: 10
+  damage: 50
+  bulletPenetration: 2
 --- !u!114 &252216292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +418,7 @@ MonoBehaviour:
   _travledDistance: 0
   _00Object: {fileID: 1656842620}
   _playerRef: {fileID: 252216281}
-  _ObjectToSpawnPrefRef: {fileID: 2017316622117933532, guid: 5522908240cf88048bb11c39cfc2756c, type: 3}
+  _ObjectToSpawnPrefRef: {fileID: 1845978683085440513, guid: 5ca7a8690d836834982db18ed8d48880, type: 3}
 --- !u!212 &314586709 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 5037469585714625136, guid: 405727804fc2bee42b31335f19120d16, type: 3}
@@ -604,7 +615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3202811786753971207, guid: 33a597a4f6a39cb4bacf60b4d9a1dab2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.92
+      value: 4.4
       objectReference: {fileID: 0}
     - target: {fileID: 3202811786753971207, guid: 33a597a4f6a39cb4bacf60b4d9a1dab2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -661,6 +672,7 @@ GameObject:
   - component: {fileID: 917805008}
   - component: {fileID: 917805007}
   - component: {fileID: 917805006}
+  - component: {fileID: 917805010}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -758,6 +770,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &917805010
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 917805005}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SerializedVersion: 0
+  m_AgentTypeID: 0
+  m_CollectObjects: 0
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 2, z: 0}
+  m_LayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_UseGeometry: 1
+  m_DefaultArea: 0
+  m_GenerateLinks: 0
+  m_IgnoreNavMeshAgent: 1
+  m_IgnoreNavMeshObstacle: 1
+  m_OverrideTileSize: 0
+  m_TileSize: 256
+  m_OverrideVoxelSize: 0
+  m_VoxelSize: 0.16666667
+  m_MinRegionArea: 2
+  m_NavMeshData: {fileID: 23800000, guid: bc9af18e205a3fd4b84d7c84477078f2, type: 2}
+  m_BuildHeightMesh: 0
 --- !u!4 &1307690721 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 177bdca413b75584d8cb2c7e0cc58545, type: 3}
