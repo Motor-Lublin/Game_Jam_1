@@ -36,7 +36,7 @@ public class PlayerRotation : MonoBehaviour
 
             float distance = Vector3.Distance(transform.position, targetPosition);
             
-            if (Vector3.Distance(lastTargetPosition, targetPosition) < 0.2f) 
+            if (Vector3.Distance(lastTargetPosition, targetPosition) < 0.1f) 
         {
             return; 
         }
