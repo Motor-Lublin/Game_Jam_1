@@ -6,6 +6,7 @@ public class playerDamage : MonoBehaviour
 {
     [SerializeField] GameObject coneOfDamage;
     [SerializeField] InputAction playerShot;
+    [SerializeField] Transform particeShotgunHolder;
 
     [SerializeField] int maxNumberOfBullets;
     int numberOfBullets;
@@ -31,6 +32,7 @@ public class playerDamage : MonoBehaviour
         {
             canShootAgain = false;
             AudioManager.Instance.PlaySFX(0);
+            ParticleManager.Instance.ShotgunParticles(0, particeShotgunHolder);
             Invoke("waitToShoot", 1);
             //PLay particles AND Animation
             inRange = GameObject.FindGameObjectsWithTag("Movable/Enemy/InRange");
