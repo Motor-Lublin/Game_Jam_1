@@ -55,4 +55,8 @@ public class playerDamage : MonoBehaviour
     {
         numberOfBullets = maxNumberOfBullets;
     }
+    private void AddDmg()
+    {
+        damage++;
+    }
 }

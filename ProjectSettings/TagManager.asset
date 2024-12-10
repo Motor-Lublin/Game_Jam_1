@@ -10,6 +10,7 @@ TagManager:
   - Movable/Enemy/InRange
   - Movable
   - UICamera
+  - Chest
   layers:
   - Default
   - TransparentFX
