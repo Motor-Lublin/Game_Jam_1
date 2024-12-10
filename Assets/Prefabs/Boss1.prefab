@@ -111,7 +111,7 @@ Transform:
   m_GameObject: {fileID: 489361350954899803}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.76115763, y: 0, z: 6.9751277}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -523,7 +523,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
-  enemyHealthNumber: 1000
+  enemyHealthNumber: 100
   distanceDamageLose: 1
 --- !u!23 &4687704133983379297
 MeshRenderer:
