@@ -173,6 +173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _lootType: 1
+  _treasureRef: {fileID: 0}
 --- !u!195 &2257628131638883237
 NavMeshAgent:
   m_ObjectHideFlags: 0
