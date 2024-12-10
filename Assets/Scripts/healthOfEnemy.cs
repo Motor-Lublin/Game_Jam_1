@@ -5,10 +5,15 @@ public class healthOfEnemy : MonoBehaviour
 {
     [SerializeField] GameObject player;
     [SerializeField] float enemyHealthNumber;
+    [SerializeField] HealthBar _healthBar;
+    [SerializeField] float _reduceSpeed = 2f;
     public float distanceDamageLose;
+    private float maxHealth;
 
     private void Start()
     {
+        maxHealth = enemyHealthNumber;
+        _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
         player = GameObject.FindGameObjectWithTag("Player");
     }
     void distanceParameter()
@@ -21,6 +26,7 @@ public class healthOfEnemy : MonoBehaviour
     {
         distanceParameter();
         enemyHealthNumber = enemyHealthNumber - player.GetComponent<playerDamage>().damage / distanceDamageLose;
+        _healthBar.UpdateHealth(maxHealth, enemyHealthNumber);
         if (enemyHealthNumber <= 0)
         {
             Destroy(gameObject);
