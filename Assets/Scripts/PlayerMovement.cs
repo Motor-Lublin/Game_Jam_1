@@ -15,7 +15,7 @@ public class PlayerMovement : MonoBehaviour
     }
 
     public void MovableListAdd(Transform t){
-       if(t.gameObject.CompareTag("Movable")){
+       if(t.gameObject.tag.Contains("Movable")){
          movables.Add(t);
          Debug.Log("Object added successfuly");
        } else {
@@ -38,6 +38,16 @@ public class PlayerMovement : MonoBehaviour
       move_Y = Input.GetAxis("Vertical") * playerSpeed;
       move_X *= Time.deltaTime;
       move_Y *= Time.deltaTime;
+
+      if (new Vector2(move_X, move_Y).magnitude > 0f)
+      {
+          PlayerAnimations.Instance.Run();
+      }
+      else 
+      {
+          PlayerAnimations.Instance.Idle();    
+      }
+
      foreach(Transform t in movables){ 
         t.Translate(move_X, 0, move_Y);
     }

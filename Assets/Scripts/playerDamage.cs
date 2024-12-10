@@ -6,7 +6,6 @@ public class playerDamage : MonoBehaviour
 {
     [SerializeField] GameObject coneOfDamage;
     [SerializeField] InputAction playerShot;
-    bool enemyInRange = false;
 
     [SerializeField] int maxNumberOfBullets;
     int numberOfBullets;

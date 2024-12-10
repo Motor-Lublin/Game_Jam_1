@@ -4,7 +4,10 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Movable
+  - Enemy
+  - Movable/Enemy
+  - Movable/Items
+  - Movable/Enemy/InRange
   layers:
   - Default
   - TransparentFX

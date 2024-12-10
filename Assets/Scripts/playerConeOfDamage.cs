@@ -4,9 +4,9 @@ public class enemyInRange : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag.Contains("Enemy"))
         {
-            other.gameObject.tag = "Enemy/InRange";
+            other.gameObject.tag = $"{other.gameObject.tag}/InRange";
         }
     }
     private void OnTriggerStay(Collider other)
@@ -16,9 +16,9 @@ public class enemyInRange : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Enemy/InRange")
+        if (other.gameObject.tag.Contains("InRange"))
         {
-            other.gameObject.tag = "Enemy";
+            other.gameObject.tag = other.gameObject.tag.Replace("/InRange", "");
         }
     }
 }
