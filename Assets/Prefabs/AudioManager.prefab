@@ -46,7 +46,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1645ae41e5e8f8458ba19da4d85c483, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClipList: []
+  audioClipList:
+  - {fileID: 8300000, guid: 847e4c026c1c72f4ea494825160c0c26, type: 3}
   musicClipList:
   - {fileID: 8300000, guid: cacb97699c054824cab6a4d0d78413e9, type: 3}
   SFXaudioSource: {fileID: -3808450781364512133}
