@@ -1,13 +1,7 @@
 using System.Collections.Generic;
-using System.Numerics;
-using NUnit.Framework;
-using Unity.Mathematics;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 using Quaternion = UnityEngine.Quaternion;
 using Random = UnityEngine.Random;
-using Vector2 = UnityEngine.Vector2;
 using Vector3 = UnityEngine.Vector3;
 
 public class Generator : MonoBehaviour
@@ -26,9 +20,6 @@ public class Generator : MonoBehaviour
     [SerializeField] private GameObject _00Object;
     [SerializeField] private GameObject _playerRef;
     [SerializeField] private GameObject _ObjectToSpawnPrefRef;
-    [SerializeField] private GameObject _spawnPoint;
-    public float spawnDistance;
-
 
     void Start()
     {

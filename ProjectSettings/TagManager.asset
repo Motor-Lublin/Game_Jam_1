@@ -8,6 +8,7 @@ TagManager:
   - Movable/Enemy
   - Movable/Items
   - Movable/Enemy/InRange
+  - Movable
   layers:
   - Default
   - TransparentFX

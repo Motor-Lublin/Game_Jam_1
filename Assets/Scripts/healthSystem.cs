@@ -1,11 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
-using NUnit.Framework;
-using System.Collections.Generic;
-using UnityEditor.U2D;
-using Unity.Android.Gradle;
-using Unity.Android.Gradle.Manifest;
 
 public class healthSystem : MonoBehaviour
 {
