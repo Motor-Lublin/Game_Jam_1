@@ -38,7 +38,7 @@ public class Enemy : SpawnableObject
     }
     void Start()
     {
-        GetComponentInChildren<MeshRenderer>().material.color = Color.red;
+        GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
 
