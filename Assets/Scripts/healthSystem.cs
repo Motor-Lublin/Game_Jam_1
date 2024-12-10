@@ -15,10 +15,7 @@ public class healthSystem : MonoBehaviour
     public Sprite S_PremiumBrokenHEart;
     public Sprite S_PremiumHeart;
 
-
-
-
-
+    [SerializeField] Light playerLight;
     private void Start()
     {
         IsHealthHalf();
@@ -34,30 +31,35 @@ public class healthSystem : MonoBehaviour
                 hearthIcons[1].sprite = S_DeadHeart;
                 hearthIcons[2].sprite = S_DeadHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 1500;
                 return;
             case 1:
                 hearthIcons[0].sprite = S_BrokenHeart;
                 hearthIcons[1].sprite = S_DeadHeart;
                 hearthIcons[2].sprite = S_DeadHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 3000;
                 return;
             case 2:
                 hearthIcons[0].sprite = S_NormalHeart;
                 hearthIcons[1].sprite = S_DeadHeart;
                 hearthIcons[2].sprite = S_DeadHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 5000;
                 return;
             case 3:
                 hearthIcons[0].sprite = S_NormalHeart;
                 hearthIcons[1].sprite = S_BrokenHeart;
                 hearthIcons[2].sprite = S_DeadHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 7500;
                 return;
             case 4:
                 hearthIcons[0].sprite = S_NormalHeart;
                 hearthIcons[1].sprite = S_NormalHeart;
                 hearthIcons[2].sprite = S_DeadHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 10000;
                 return;
             
             case 5:
@@ -65,24 +67,28 @@ public class healthSystem : MonoBehaviour
                 hearthIcons[1].sprite = S_NormalHeart;
                 hearthIcons[2].sprite = S_BrokenHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 12500;
                 return;
             case 6:
                 hearthIcons[0].sprite = S_NormalHeart;
                 hearthIcons[1].sprite = S_NormalHeart;
                 hearthIcons[2].sprite = S_NormalHeart;
                 hearthIcons[3].sprite = S_DeadHeart;
+                playerLight.colorTemperature = 15000;
                 return;
             case 7:
                 hearthIcons[0].sprite = S_NormalHeart;
                 hearthIcons[1].sprite = S_NormalHeart;
                 hearthIcons[2].sprite = S_NormalHeart;
                 hearthIcons[3].sprite = S_BrokenHeart;
+                playerLight.colorTemperature = 17500;
                 return;
             case 8:
                 hearthIcons[0].sprite = S_NormalHeart;
                 hearthIcons[1].sprite = S_NormalHeart;
                 hearthIcons[2].sprite = S_NormalHeart;
                 hearthIcons[3].sprite = S_NormalHeart;
+                playerLight.colorTemperature = 20000;
                 return;
         }
     }
