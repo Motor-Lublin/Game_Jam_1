@@ -406,7 +406,7 @@ MonoBehaviour:
   S_NormalHeart: {fileID: 21300000, guid: a3c9f58a2b7c6c945aac5d1605a44ee4, type: 3}
   S_PremiumBrokenHEart: {fileID: 21300000, guid: d29c38c303237d248911e32b5517e307, type: 3}
   S_PremiumHeart: {fileID: 21300000, guid: 1620294c67e45254abc64afe0207930e, type: 3}
-  playerLight: {fileID: 0}
+  playerLight: {fileID: 1178659176}
 --- !u!114 &252216293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -921,8 +921,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 11
   m_Type: 2
-  m_Color: {r: 1, g: 0.6462264, b: 0.6462264, a: 1}
-  m_Intensity: 10
+  m_Color: {r: 1, g: 0.5518868, b: 0.5518868, a: 1}
+  m_Intensity: 20
   m_Range: 50
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
