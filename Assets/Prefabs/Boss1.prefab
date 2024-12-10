@@ -509,7 +509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTarget: {fileID: 0}
   frontLocation: {fileID: 5198246543190906007}
-  enemySeeRange: 20
+  enemySeeRange: 30
   enemyAtackRange: 1
 --- !u!114 &9081446106593972412
 MonoBehaviour:
