@@ -358,7 +358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b0251ce3063784e8b233b181ba76c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coneOfDamage: {fileID: 435227202}
+  coneOfDamage: {fileID: 0}
   playerShot:
     m_Name: Player Shot
     m_Type: 0
@@ -423,14 +423,14 @@ MonoBehaviour:
   _00Object: {fileID: 1656842620}
   _playerRef: {fileID: 252216281}
   _objectToSpawnPrefRef: {fileID: 2017316622117933532, guid: 5522908240cf88048bb11c39cfc2756c, type: 3}
-  _enemy1Ref: {fileID: 2930123010518056536, guid: c626232467953644dbf643efdcd5ce0c, type: 3}
-  _enemy2Ref: {fileID: 1845978683085440513, guid: 5ca7a8690d836834982db18ed8d48880, type: 3}
-  _enemy3Ref: {fileID: 1845978683085440513, guid: 5ca7a8690d836834982db18ed8d48880, type: 3}
+  _enemy1Ref: {fileID: 2930123010518056536, guid: fedf66e6d72c3e04999c23b84a497104, type: 3}
+  _enemy2Ref: {fileID: 2930123010518056536, guid: fedf66e6d72c3e04999c23b84a497104, type: 3}
+  _enemy3Ref: {fileID: 2930123010518056536, guid: fedf66e6d72c3e04999c23b84a497104, type: 3}
   _heartRef: {fileID: 6221158132416955826, guid: 87c56f34b0990f44b9c8051939a4e51c, type: 3}
   _chestRef: {fileID: 6221158132416955826, guid: 87c56f34b0990f44b9c8051939a4e51c, type: 3}
   _gunRef: {fileID: 6221158132416955826, guid: 87c56f34b0990f44b9c8051939a4e51c, type: 3}
   _environ1Ref: {fileID: 7537415346559454374, guid: fe4732f808c5a2a4d9acfbeaa96fa07b, type: 3}
-  _bossRef: {fileID: 1845978683085440513, guid: 5ca7a8690d836834982db18ed8d48880, type: 3}
+  _bossRef: {fileID: 2930123010518056536, guid: c626232467953644dbf643efdcd5ce0c, type: 3}
 --- !u!54 &252216294
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1003,7 +1003,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1545325629}
   - component: {fileID: 1545325626}
-  - component: {fileID: 1545325628}
   - component: {fileID: 1545325627}
   m_Layer: 0
   m_Name: overlay
@@ -1107,14 +1106,6 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
---- !u!81 &1545325628
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1545325625}
-  m_Enabled: 1
 --- !u!4 &1545325629
 Transform:
   m_ObjectHideFlags: 0
