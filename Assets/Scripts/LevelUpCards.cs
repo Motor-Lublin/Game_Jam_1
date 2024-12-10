@@ -10,7 +10,7 @@ public class LevelUpCards : MonoBehaviour
     {
         if (other.gameObject.tag.Contains("Player"))
         {
-            if (Vector3.Distance(other.transform.position, transform.position) > 3f) return;
+            if (Vector3.Distance(other.transform.position, transform.position) > 5f) return;
             ObjectsEnums.ELevelUpType levelUpType = ObjectsEnums.ELevelUpType.HealthUp; // Hud.PickCard()
             switch (levelUpType)
             {

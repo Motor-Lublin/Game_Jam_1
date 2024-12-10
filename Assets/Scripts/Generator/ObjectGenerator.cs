@@ -6,6 +6,11 @@ using Vector3 = UnityEngine.Vector3;
 
 public class Generator : MonoBehaviour
 {
+    //FRANEK
+    public static Generator Instance;
+    //FRANEK
+    
+
     private ObjectDB _objectDb;
     private List<GameObject> _spawnedObjects;//might be useless
     private float _enemySpawnMultiplier;
@@ -31,6 +36,9 @@ public class Generator : MonoBehaviour
 
     void Start()
     {
+        //FRANEK
+        Instance = this;
+        //FRANEK
         _playerMovement = _playerRef.GetComponent<PlayerMovement>();
         _objectDb = new ObjectDB();
         _spawnDistance = 25f;

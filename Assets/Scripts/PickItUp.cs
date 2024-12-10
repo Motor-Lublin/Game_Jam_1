@@ -9,8 +9,11 @@ public class PickItUp : MonoBehaviour
     private bool _destroyPending;
 
 
-    void Start()
+    void Awake()
     {
+        //FRANEK
+        _playerTarget = GameObject.FindGameObjectWithTag("Player");
+        //FRANEK
         if (_lootType == null) _lootType = ObjectsEnums.ELoot.Heart;
     }
     void OnTriggerEnter(Collider other)
@@ -22,7 +25,7 @@ public class PickItUp : MonoBehaviour
                 case ObjectsEnums.ELoot.Heart:
                     if (Vector3.Distance(other.transform.position, transform.position) > 10f)
                         break;
-                    _playerTarget.GetComponent<healthSystem>().HealUp(2);
+                    _playerTarget.GetComponent<healthSystem>().HealUp(1);
                     Destroy(gameObject);
                     break;
                 default: break;
