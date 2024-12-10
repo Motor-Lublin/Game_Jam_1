@@ -25,7 +25,7 @@ public class Generator : MonoBehaviour
     {
         _playerMovement = _playerRef.GetComponent<PlayerMovement>();
         _objectDb = new ObjectDB();
-        _spawnDistance = 10f;
+        _spawnDistance = 25f;
         _spawnTreshold = 50f;
         _canSpawnBoss = false;
         _enemySpawnMultiplier = 1f;

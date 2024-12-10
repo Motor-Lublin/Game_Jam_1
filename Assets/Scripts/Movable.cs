@@ -17,6 +17,11 @@ public class Movable : MonoBehaviour
         centerObject.GetComponent<PlayerMovement>().MovableListAdd(transform);
     }
 
+    public void RemoveFromMovableList(Transform transform)
+    {
+        centerObject.GetComponent<PlayerMovement>().MovableListDel(transform);
+    }
+
     // Update is called once per frame
     void Update()
     {
