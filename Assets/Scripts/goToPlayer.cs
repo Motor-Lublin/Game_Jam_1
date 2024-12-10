@@ -14,6 +14,9 @@ public class goToPlayer : MonoBehaviour
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();
+        //FRANEK
+        playerTarget = GameObject.FindGameObjectWithTag("Player");
+        //FRANEK
     }
 
     void FixedUpdate()

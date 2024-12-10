@@ -1,4 +1,7 @@
+using System.IO;
+using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : SpawnableObject
 {
@@ -10,6 +13,7 @@ public class Enemy : SpawnableObject
     private float _mediumSpawnChance = 0.4f;
     private float _hardSpawnChance = 0.15f;
     private float _bossSpawnChance = 0.03f;
+    private string _pathToChariotController = "Assets/Models/Chariot";
 
     public Enemy(ObjectsEnums.EEnemy enemyType) : base(ObjectsEnums.EObjectTypes.Enemy)
     {
@@ -34,8 +38,9 @@ public class Enemy : SpawnableObject
     }
     void Start()
     {
-        
+        GetComponent<MeshRenderer>().material.color = Color.red;
     }
+
 
     // Update is called once per frame
     void Update()

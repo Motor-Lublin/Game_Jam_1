@@ -9,6 +9,7 @@ TagManager:
   - Movable/Items
   - Movable/Enemy/InRange
   - Movable
+  - UICamera
   layers:
   - Default
   - TransparentFX

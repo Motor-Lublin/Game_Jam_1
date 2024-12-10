@@ -32,7 +32,7 @@ public class playerDamage : MonoBehaviour
             canShootAgain = false;
             Invoke("waitToShoot", 1);
             //PLay particles AND Animation
-            inRange = GameObject.FindGameObjectsWithTag("Enemy/InRange");
+            inRange = GameObject.FindGameObjectsWithTag("Movable/Enemy/InRange");
             foreach (GameObject canBeKilled in inRange)
             {
                 canBeKilled.GetComponent<healthOfEnemy>().enemyLoseHP();
