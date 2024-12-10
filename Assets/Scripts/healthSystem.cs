@@ -111,13 +111,17 @@ public class healthSystem : MonoBehaviour
     private void Update()
     {
         IsHealthHalf();
+        if(currentRedHearths <= 0)
+        {
+            currentRedHearths = 7;
+        }
     }
-    private void AddHP()
+    public void AddHP()
     {
         currentRedHearths++;
         IsHealthHalf();
     }
-    private void RemoveHP()
+    public void RemoveHP()
     {
         currentRedHearths--;
         IsHealthHalf();

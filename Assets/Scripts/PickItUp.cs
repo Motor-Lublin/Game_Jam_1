@@ -22,7 +22,7 @@ public class PickItUp : MonoBehaviour
                 case ObjectsEnums.ELoot.Heart:
                     if (Vector3.Distance(other.transform.position, transform.position) > 10f)
                         break;
-                    _playerTarget.GetComponent<healthSystem>().HealUp(2);
+                    _playerTarget.GetComponent<healthSystem>().HealUp(1);
                     Destroy(gameObject);
                     break;
                 default: break;
