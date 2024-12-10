@@ -3,9 +3,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
+    [SerializeField] public GameObject UIForUpgradeOfStats;
     void Start()
     {
         Instance = this;
+        AudioManager.Instance.PlayMusic(0);
     }
 
     public void PauseGame ()
