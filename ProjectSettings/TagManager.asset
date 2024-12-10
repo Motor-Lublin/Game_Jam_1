@@ -9,18 +9,16 @@ TagManager:
   - Movable/Items
   - Movable/Enemy/InRange
   - Movable
-  - level1
-  - musicVolume
-  - musicToggle
+  - UICamera
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Vinette
+  - 
   - Water
   - UI
-  - one
-  - two
+  - 
+  - 
   - 
   - 
   - 

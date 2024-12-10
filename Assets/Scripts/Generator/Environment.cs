@@ -21,7 +21,7 @@ public class Environment : SpawnableObject
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        GetComponentInChildren<MeshRenderer>().material.color = Color.green;
     }
 
     // Update is called once per frame

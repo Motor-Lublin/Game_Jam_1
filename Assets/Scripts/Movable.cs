@@ -8,6 +8,9 @@ public class Movable : MonoBehaviour
     {
      // TODO: Dodać request obiektu do dodania to movable 
       Transform currTransform = transform;
+        //FRANEK
+        centerObject = GameObject.FindGameObjectWithTag("Player");
+        //FRANEK
       centerObject.GetComponent<PlayerMovement>().MovableListAdd(currTransform);
       Debug.Log("added object to MovableList");
 
@@ -15,6 +18,11 @@ public class Movable : MonoBehaviour
     }
     public void AddToMovableList() {
         centerObject.GetComponent<PlayerMovement>().MovableListAdd(transform);
+    }
+
+    public void RemoveFromMovableList(Transform transform)
+    {
+        centerObject.GetComponent<PlayerMovement>().MovableListDel(transform);
     }
 
     // Update is called once per frame

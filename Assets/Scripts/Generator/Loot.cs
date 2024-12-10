@@ -36,19 +36,10 @@ public class Loot : SpawnableObject
 
     void Start()
     {
-        InitiateLoot();
-
 
     }
 
-    private void InitiateLoot()
-    {
-        this.gameObject.GetComponent<MeshFilter>().mesh = _lootMesh;
-        this.gameObject.GetComponent<MeshRenderer>().material = _lootMaterial;
-        CapsuleCollider meshCollider = this.gameObject.GetComponent<CapsuleCollider>();
-        meshCollider.isTrigger = true;
 
-    }
 
     // Update is called once per frame
     void Update()
