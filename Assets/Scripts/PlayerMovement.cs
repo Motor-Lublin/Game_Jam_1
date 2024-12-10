@@ -48,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
         move_X = Input.GetAxis("Horizontal") * playerSpeed;
         if (_blockNegativeX && move_X < 0) move_X = 0;
         if (_blockPostiveX && move_X > 0) move_X = 0;
@@ -56,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         if (_blockPostiveY && move_Y > 0) move_Y = 0;
         move_X *= Time.deltaTime;
         move_Y *= Time.deltaTime;
+
 
         if (new Vector2(move_X, move_Y).magnitude > 0f)
         {
@@ -68,9 +70,13 @@ public class PlayerMovement : MonoBehaviour
 
         foreach (Transform t in movables)
         {
-            if(t != null)
+            if (t != null)
                 t.Translate(move_X, 0, move_Y, Space.World);
+
         }
+
+        //FRANEK
+        GroundManager.Instance.ChangeMaterialTilt(move_X, move_Y);
     }
     void OnTriggerEnter(Collider collider)
     {
