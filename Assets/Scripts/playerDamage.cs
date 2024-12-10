@@ -6,6 +6,7 @@ public class playerDamage : MonoBehaviour
 {
     [SerializeField] GameObject coneOfDamage;
     [SerializeField] InputAction playerShot;
+    public Transform ParticleHolder;
 
     [SerializeField] int maxNumberOfBullets;
     int numberOfBullets;
@@ -32,7 +33,11 @@ public class playerDamage : MonoBehaviour
             canShootAgain = false;
             Invoke("waitToShoot", 1);
             //PLay particles AND Animation
+            ParticleManager.Instance.ShotgunParticles(0, ParticleHolder);
+            AudioManager.Instance.PlaySFX(0);
             inRange = GameObject.FindGameObjectsWithTag("Movable/Enemy/InRange");
+            var chestInRange = GameObject.FindGameObjectWithTag("Movable/Chest/InRange");
+            Destroy(chestInRange);
             foreach (GameObject canBeKilled in inRange)
             {
                 canBeKilled.GetComponent<healthOfEnemy>().enemyLoseHP();

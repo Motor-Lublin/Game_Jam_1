@@ -8,10 +8,15 @@ public class enemyInRange : MonoBehaviour
         {
             other.gameObject.tag = $"{other.gameObject.tag}/InRange";
         }
+
+        if (other.gameObject.tag.Contains("Chest"))
+        {
+            other.gameObject.tag = $"{other.gameObject.tag}/InRange";
+        }
     }
     private void OnTriggerStay(Collider other)
     {
-        //other.GetComponent<distanceScript>();
+        
     }
 
     private void OnTriggerExit(Collider other)
