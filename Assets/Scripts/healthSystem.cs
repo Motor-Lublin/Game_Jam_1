@@ -8,6 +8,7 @@ public class healthSystem : MonoBehaviour
     public int currentGoldHearths;
     public int maxRedHearths;
     public int maxGoldHearths;
+    private int _hardLimitOfRedHearts;
 
     public Sprite S_BrokenHeart;
     public Sprite S_DeadHeart;
@@ -19,6 +20,7 @@ public class healthSystem : MonoBehaviour
     private void Start()
     {
         IsHealthHalf();
+        maxRedHearths = 8;
 
     }
 
@@ -120,11 +122,10 @@ public class healthSystem : MonoBehaviour
         currentRedHearths--;
         IsHealthHalf();
     }
-    private void OnCollisionEnter(Collision other)
+
+    public void AddMaxHealth(int i)
     {
-        if (other.gameObject.tag.Contains("Enemy"))
-        {
-            RemoveHP();
-        }
+        if(maxRedHearths + i<=_hardLimitOfRedHearts)
+            maxRedHearths += i;
     }
 }
