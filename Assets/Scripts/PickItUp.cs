@@ -22,7 +22,7 @@ public class PickItUp : MonoBehaviour
                 case ObjectsEnums.ELoot.Heart:
                     if (Vector3.Distance(other.transform.position, transform.position) > 10f)
                         break;
-                    other.GameObject().GetComponent<healthSystem>().HealUp(2);
+                    _playerTarget.GetComponent<healthSystem>().HealUp(1);
                     Destroy(gameObject);
                     break;
                 default: break;
@@ -33,7 +33,7 @@ public class PickItUp : MonoBehaviour
 
     void OnDestroy()
     {
-        if (!_destroyPending&& _lootType == ObjectsEnums.ELoot.Chest)
+        if (!_destroyPending&& _lootType != ObjectsEnums.ELoot.Chest)
         {
             if (_treasureRef != null)
                 Instantiate(_treasureRef, transform.position, transform.rotation);
