@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: a591280b62de84948ab6277c6aa5637c
   - enabled: 1
-    path: Assets/Scenes/GunplayTestML.unity
+    path: Assets/Scenes/Mergerplz.unity
     guid: b56060975eb75cc3eac6c7cb417af783
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
