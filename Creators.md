@@ -20,13 +20,13 @@ Każdy krok w cieniu może być ostatnim, a każdy promień światła – ratunk
 - System Kontroli Wersji - GitHub
 
 ### Twórcy:
-- Maksym Stepanchuk - Projekt Menager
-- Franek Barszcz - Experience Designer
-- Oliwia Gorgol - Experience Designer
-- Jakub Szewczyk - Experience Designer
-- Michał Łasocha - Game Designer
-- Maksymilian Oszkiel - Game Developer
-- Krzysztof Tarkowski - Game Developer
-- Mateusz Szumiło - Game Developer
-- Michał Słoczyński - Quality Assurance
-- Patryk Tuziemczyk - Quality Assurance
+- Maksym Stepanchuk 
+- Franek Barszcz 
+- Oliwia Gorgol 
+- Jakub Szewczyk
+- Michał Łasocha 
+- Maksymilian Oszkiel 
+- Krzysztof Tarkowski 
+- Mateusz Szumiło 
+- Michał Słoczyński 
+- Patryk Tuziemczyk 
