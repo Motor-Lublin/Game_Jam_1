@@ -2,14 +2,13 @@
 
 <img src="https://media.discordapp.net/attachments/1307667927771910156/1316082265402511360/Screenshot_3.png?ex=69019adf&is=6900495f&hm=9a569ffcfdf5db5597fba52024155816363e19469f50a688c88ea14bd005c5cc&=&format=webp&quality=lossless&width=1536&height=864">
 
-
 ## Opis:
 Wciel się w tajemniczego człowieka z głową lampy i przemierzaj surrealistyczny, mroczny świat pełen mechanicznych przeciwników. 
 Twoje światło to jedyne źródło widoczności — oświetla tylko to, co znajduje się w jego zasięgu, tworząc atmosferę napięcia i niepewności.
 Z perspektywy z góry eksploruj świat, walcz z robotami, i zbieraj co ci potrzebne by przetrwać. 
 Każdy krok w cieniu może być ostatnim, a każdy promień światła – ratunkiem lub pułapką.
 
-<img src="https://www.youtube.com/watch?v=TA-jRgyij7s">
+<video src="https://www.youtube.com/watch?v=TA-jRgyij7s" width="320" height="240" controls></video>
 
 ### Twórcy:
 Maksym Stepanchuk - Projekt Menager
