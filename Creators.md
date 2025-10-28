@@ -12,6 +12,13 @@ Każdy krok w cieniu może być ostatnim, a każdy promień światła – ratunk
 ## Gameplay:
 [![Watch the video](https://img.youtube.com/vi/TA-jRgyij7s/0.jpg)](https://www.youtube.com/watch?v=TA-jRgyij7s)
 
+## Wykorzystana technologia:
+- Silnik gry - Unity
+- Język programowania - C#
+- Grafika - Photoshop
+- Modele 3D - Blender
+- System Kontroli Wersji - GitHub
+
 ### Twórcy:
 - Maksym Stepanchuk - Projekt Menager
 - Franek Barszcz - Experience Designer
